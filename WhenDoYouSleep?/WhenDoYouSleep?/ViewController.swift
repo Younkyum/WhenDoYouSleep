@@ -9,7 +9,12 @@ import UIKit
 
 class ViewController: UIViewController {
     // MARK: - AutoLayout
-    // MARK: HEAD
+    let backgroundImageVIew: UIImageView = {
+        let imageView = UIImageView()
+        return imageView
+    }()
+    
+    // MARK: - HEAD
     let currentTimeTitleLabel: UILabel = {
         let label = UILabel()
         
@@ -152,6 +157,8 @@ class ViewController: UIViewController {
     
     let timePicker: UIDatePicker = {
         let datePicker = UIDatePicker()
+        datePicker.preferredDatePickerStyle = .wheels
+        datePicker.translatesAutoresizingMaskIntoConstraints = false
         return datePicker
     }()
     
@@ -219,16 +226,81 @@ class ViewController: UIViewController {
     // MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        addAllViews()
+        addAllAutoLayout()
     }
     
 }
 
+
+extension ViewController {
+    func addAllViews() {
+        view.addSubview(backgroundImageVIew)
+        view.addSubview(currentTimeTitleLabel)
+        view.addSubview(currnetTime)
+        view.addSubview(ifYouSleepNowLabel)
+        view.addSubview(oneHourHalfLabel)
+        view.addSubview(threeHourLabel)
+        view.addSubview(fourHourHalfLabel)
+        view.addSubview(sixHourLabel)
+        view.addSubview(sevenHourHalfLabel)
+        view.addSubview(oneHourHalfTimeLabel)
+        view.addSubview(threeHourTimeLabel)
+        view.addSubview(fourHourHalfTimeLabel)
+        view.addSubview(sixHourTimeLabel)
+        view.addSubview(sevenHourHalfTimeLabel)
+
+        view.addSubview(whenDoYouAwake)
+        view.addSubview(timePicker)
+        view.addSubview(howAboutThisTimelabel)
+        view.addSubview(avaliableSleepTimeLabel)
+        view.addSubview(sixHourLabel2)
+        view.addSubview(sevenHourHalfLabel2)
+        view.addSubview(sixHourTimeLabel2)
+        view.addSubview(sevenHourHalfTimeLabel2)
+    }
+    
+    func addAllAutoLayout() {
+//        backgroundImageViewAutoLayout()
+        currentTimeLabelAutoLayout()
+        currentTimeTitleLabelAutoLayout()
+        ifYouSleepNowAutoLayout()
+        oneHourHalfLabelAutoLayout()
+        threeHourLabelAutoLayout()
+        fourHourHalfAutoLayout()
+        sixHourLabelAutoLayout()
+        sevenHourLabelAutoLayout()
+        oneHourHalfTimeLabelLayout()
+        threeHourTimeLabelLayout()
+        fourHourHalfTimeLabelLayout()
+        sixHourTimeLabelLayout()
+        sevenHourHalfTimeLabelLayout()
+
+        whenDoYouAwakeLayout()
+        timePickerLayout()
+        howAboutThisTimeLabelLayout()
+        avaliableSleepTimeLabelLayout()
+        sixHourLabel2Layout()
+        sevenHourHalfLabel2Layout()
+        sixHourTimeLabel2Layout()
+        sevenHourHalfTimeLabel2Layout()
+    }
+}
+
+
 //MARK: - AutoLayOut
 extension ViewController {
+    
+//    func backgroundImageViewAutoLayout() {
+//        backgroundImageVIew.leadingAnchor.constraint(equalTo: view.superview!.leadingAnchor).isActive = true
+//        backgroundImageVIew.trailingAnchor.constraint(equalTo: view.superview!.trailingAnchor).isActive = true
+//        backgroundImageVIew.topAnchor.constraint(equalTo: view.superview!.topAnchor).isActive = true
+//        backgroundImageVIew.bottomAnchor.constraint(equalTo: view.superview!.bottomAnchor).isActive = true
+//    }
+//
     func currentTimeTitleLabelAutoLayout() {
-        currentTimeTitleLabel.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: 10).isActive = true
-        currentTimeTitleLabel.leadingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leadingAnchor, constant: 10).isActive = true
+        currentTimeTitleLabel.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 25).isActive = true
+        currentTimeTitleLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 25).isActive = true
     }
     
     func currentTimeLabelAutoLayout() {
@@ -253,7 +325,7 @@ extension ViewController {
     
     func fourHourHalfAutoLayout() {
         fourHourHalfLabel.leadingAnchor.constraint(equalTo: self.currentTimeTitleLabel.leadingAnchor).isActive = true
-        fourHourHalfLabel.topAnchor.constraint(equalTo: oneHourHalfLabel.bottomAnchor, constant: 25).isActive = true
+        fourHourHalfLabel.topAnchor.constraint(equalTo: threeHourLabel.bottomAnchor, constant: 25).isActive = true
     }
     
     func sixHourLabelAutoLayout() {
@@ -282,7 +354,7 @@ extension ViewController {
     }
     
     func sixHourTimeLabelLayout() {
-        sixHourTimeLabel.centerXAnchor.constraint(equalTo: oneHourHalfLabel.centerXAnchor).isActive = true
+        sixHourTimeLabel.centerXAnchor.constraint(equalTo: oneHourHalfTimeLabel.centerXAnchor).isActive = true
         sixHourTimeLabel.centerYAnchor.constraint(equalTo: sixHourLabel.centerYAnchor).isActive = true
     }
     
@@ -298,8 +370,9 @@ extension ViewController {
     
     func timePickerLayout() {
         timePicker.topAnchor.constraint(equalTo: whenDoYouAwake.bottomAnchor, constant: 5).isActive = true
-        timePicker.leadingAnchor.constraint(equalTo: self.view.leadingAnchor).isActive = true
-        timePicker.trailingAnchor.constraint(equalTo: self.view.leadingAnchor).isActive = true
+        timePicker.heightAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.heightAnchor, multiplier: 0.14).isActive = true
+        timePicker.leadingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leadingAnchor).isActive = true
+        timePicker.trailingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.trailingAnchor).isActive = true
     }
     
     func howAboutThisTimeLabelLayout() {
