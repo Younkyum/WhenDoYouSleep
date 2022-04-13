@@ -195,7 +195,28 @@ class ViewController: UIViewController {
         return label
     }()
     
+    let sixHourTimeLabel2: UILabel = {
+        let label = UILabel()
+        
+        label.text = "00:00:00"
+        label.textColor = .green
+        label.font = .systemFont(ofSize: 33, weight: .regular)
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+    
+    let sevenHourHalfTimeLabel2: UILabel = {
+        let label = UILabel()
+        
+        label.text = "00:00:00"
+        label.textColor = .green
+        label.font = .systemFont(ofSize: 33, weight: .regular)
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
 
+    
+    // MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -245,12 +266,71 @@ extension ViewController {
         sevenHourHalfLabel.topAnchor.constraint(equalTo: sixHourLabel.bottomAnchor, constant: 25).isActive = true
     }
     
-    func oneHourHalfTimeLabelLayOut() {
+    func oneHourHalfTimeLabelLayout() {
         oneHourHalfTimeLabel.centerYAnchor.constraint(equalTo: oneHourHalfLabel.centerYAnchor).isActive = true
         oneHourHalfTimeLabel.leadingAnchor.constraint(equalTo: oneHourHalfLabel.trailingAnchor, constant: 25).isActive = true
     }
     
+    func threeHourTimeLabelLayout() {
+        threeHourTimeLabel.centerXAnchor.constraint(equalTo: oneHourHalfTimeLabel.centerXAnchor).isActive = true
+        threeHourTimeLabel.centerYAnchor.constraint(equalTo: threeHourLabel.centerYAnchor).isActive = true
+    }
     
+    func fourHourHalfTimeLabelLayout() {
+        fourHourHalfTimeLabel.centerXAnchor.constraint(equalTo: oneHourHalfTimeLabel.centerXAnchor).isActive = true
+        fourHourHalfTimeLabel.centerYAnchor.constraint(equalTo: fourHourHalfLabel.centerYAnchor).isActive = true
+    }
+    
+    func sixHourTimeLabelLayout() {
+        sixHourTimeLabel.centerXAnchor.constraint(equalTo: oneHourHalfLabel.centerXAnchor).isActive = true
+        sixHourTimeLabel.centerYAnchor.constraint(equalTo: sixHourLabel.centerYAnchor).isActive = true
+    }
+    
+    func sevenHourHalfTimeLabelLayout() {
+        sevenHourHalfTimeLabel.centerXAnchor.constraint(equalTo: oneHourHalfTimeLabel.centerXAnchor).isActive = true
+        sevenHourHalfTimeLabel.centerYAnchor.constraint(equalTo: sevenHourHalfLabel.centerYAnchor).isActive = true
+    }
+    
+    func whenDoYouAwakeLayout() {
+        whenDoYouAwake.leadingAnchor.constraint(equalTo: currnetTime.leadingAnchor).isActive = true
+        whenDoYouAwake.topAnchor.constraint(equalTo: sevenHourHalfLabel.bottomAnchor, constant: 30).isActive = true
+    }
+    
+    func timePickerLayout() {
+        timePicker.topAnchor.constraint(equalTo: whenDoYouAwake.bottomAnchor, constant: 5).isActive = true
+        timePicker.leadingAnchor.constraint(equalTo: self.view.leadingAnchor).isActive = true
+        timePicker.trailingAnchor.constraint(equalTo: self.view.leadingAnchor).isActive = true
+    }
+    
+    func howAboutThisTimeLabelLayout() {
+        howAboutThisTimelabel.leadingAnchor.constraint(equalTo: currentTimeTitleLabel.leadingAnchor).isActive = true
+        howAboutThisTimelabel.topAnchor.constraint(equalTo: timePicker.bottomAnchor).isActive = true
+    }
+    
+    func avaliableSleepTimeLabelLayout() {
+        avaliableSleepTimeLabel.leadingAnchor.constraint(equalTo: currentTimeTitleLabel.leadingAnchor).isActive = true
+        avaliableSleepTimeLabel.topAnchor.constraint(equalTo: howAboutThisTimelabel.bottomAnchor).isActive = true
+    }
+    
+    func sixHourLabel2Layout() {
+        sixHourLabel2.leadingAnchor.constraint(equalTo: currentTimeTitleLabel.leadingAnchor).isActive = true
+        sixHourLabel2.topAnchor.constraint(equalTo: avaliableSleepTimeLabel.bottomAnchor, constant: 10).isActive = true
+    }
+    
+    func sixHourTimeLabel2Layout() {
+        sixHourTimeLabel2.centerXAnchor.constraint(equalTo: oneHourHalfTimeLabel.centerXAnchor).isActive = true
+        sixHourTimeLabel2.centerYAnchor.constraint(equalTo: sixHourLabel2.centerYAnchor).isActive = true
+    }
+    
+    func sevenHourHalfLabel2Layout() {
+        sevenHourHalfLabel2.leadingAnchor.constraint(equalTo: sixHourLabel2.leadingAnchor).isActive = true
+        sevenHourHalfLabel2.topAnchor.constraint(equalTo: sixHourLabel2.bottomAnchor, constant: 25).isActive = true
+    }
+    
+    func sevenHourHalfTimeLabel2Layout() {
+        sevenHourHalfTimeLabel2.centerXAnchor.constraint(equalTo: oneHourHalfTimeLabel.centerXAnchor).isActive = true
+        sevenHourHalfTimeLabel2.centerYAnchor.constraint(equalTo: sevenHourHalfLabel2.centerYAnchor).isActive = true
+    }
 }
 
 
