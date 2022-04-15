@@ -99,7 +99,7 @@ class ViewController: UIViewController {
         
         label.text = "00:00:00"
         label.textColor = .red
-        label.font = .systemFont(ofSize: 33, weight: .regular)
+        label.font = .systemFont(ofSize: 35, weight: .regular)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -109,7 +109,7 @@ class ViewController: UIViewController {
         
         label.text = "00:00:00"
         label.textColor = .yellow
-        label.font = .systemFont(ofSize: 33, weight: .regular)
+        label.font = .systemFont(ofSize: 35, weight: .regular)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -119,7 +119,7 @@ class ViewController: UIViewController {
         
         label.text = "00:00:00"
         label.textColor = .yellow
-        label.font = .systemFont(ofSize: 33, weight: .regular)
+        label.font = .systemFont(ofSize: 35, weight: .regular)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -129,7 +129,7 @@ class ViewController: UIViewController {
         
         label.text = "00:00:00"
         label.textColor = .green
-        label.font = .systemFont(ofSize: 33, weight: .regular)
+        label.font = .systemFont(ofSize: 35, weight: .regular)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -139,7 +139,7 @@ class ViewController: UIViewController {
         
         label.text = "00:00:00"
         label.textColor = .green
-        label.font = .systemFont(ofSize: 33, weight: .regular)
+        label.font = .systemFont(ofSize: 35, weight: .regular)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -209,7 +209,7 @@ class ViewController: UIViewController {
         
         label.text = "00:00:00"
         label.textColor = .green
-        label.font = .systemFont(ofSize: 33, weight: .regular)
+        label.font = .systemFont(ofSize: 35, weight: .regular)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -219,7 +219,7 @@ class ViewController: UIViewController {
         
         label.text = "00:00:00"
         label.textColor = .green
-        label.font = .systemFont(ofSize: 33, weight: .regular)
+        label.font = .systemFont(ofSize: 35, weight: .regular)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -436,7 +436,7 @@ extension ViewController {
     
     func whenDoYouAwakeLayout() {
         whenDoYouAwake.leadingAnchor.constraint(equalTo: currnetTime.leadingAnchor).isActive = true
-        whenDoYouAwake.centerYAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.centerYAnchor).isActive = true
+        whenDoYouAwake.topAnchor.constraint(equalTo: sevenHourHalfLabel.bottomAnchor, constant: 15).isActive = true
     }
     
     func timePickerLayout() {
@@ -472,7 +472,7 @@ extension ViewController {
     }
     
     func sevenHourHalfTimeLabel2Layout() {
-        sevenHourHalfTimeLabel2.centerXAnchor.constraint(equalTo: oneHourHalfTimeLabel.centerXAnchor).isActive = true
+        sevenHourHalfTimeLabel2.leadingAnchor.constraint(equalTo: oneHourHalfTimeLabel.leadingAnchor).isActive = true
         sevenHourHalfTimeLabel2.centerYAnchor.constraint(equalTo: sevenHourHalfLabel2.centerYAnchor).isActive = true
     }
 }

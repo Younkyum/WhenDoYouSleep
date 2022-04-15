@@ -11,11 +11,15 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="WhenDoYouSleep_" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="WhenDoYouSleep" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9tq-sN-Peq">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <color key="backgroundColor" systemColor="labelColor"/>
+                            </view>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.0" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="RX1-Q8-gGx">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
@@ -39,14 +43,18 @@
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" systemColor="labelColor"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="RX1-Q8-gGx" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="3eg-hE-N9b"/>
                             <constraint firstItem="RX1-Q8-gGx" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="85x-UC-pq5"/>
                             <constraint firstItem="RX1-Q8-gGx" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="AV7-LJ-YIq"/>
+                            <constraint firstAttribute="bottom" secondItem="9tq-sN-Peq" secondAttribute="bottom" id="C69-NB-hf1"/>
+                            <constraint firstItem="9tq-sN-Peq" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Gyk-rB-dsn"/>
                             <constraint firstItem="Gxs-Yn-5KJ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="15" id="ZNd-Fb-e4i"/>
+                            <constraint firstItem="9tq-sN-Peq" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="gut-i2-mVC"/>
                             <constraint firstAttribute="bottom" secondItem="RX1-Q8-gGx" secondAttribute="bottom" id="k4k-1x-zVU"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Gxs-Yn-5KJ" secondAttribute="trailing" constant="15" id="tFr-fW-8iq"/>
+                            <constraint firstItem="9tq-sN-Peq" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="wYe-nA-tn3"/>
                         </constraints>
                     </view>
                     <connections>
@@ -56,7 +64,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="130" y="40"/>
+            <point key="canvasLocation" x="128.98550724637681" y="39.508928571428569"/>
         </scene>
     </scenes>
     <resources>
