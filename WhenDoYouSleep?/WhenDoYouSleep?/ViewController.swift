@@ -233,6 +233,11 @@ class ViewController: UIViewController {
     // MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if #available(iOS 13.0, *) {
+            overrideUserInterfaceStyle = .light
+        }
+        
         addAllViews()
         addAllAutoLayout()
         setDefaultTime()
