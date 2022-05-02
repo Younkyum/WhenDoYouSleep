@@ -1,84 +1,224 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="VM8-aJ-xpf">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <!--Wake Time-->
+        <scene sceneID="cBD-8a-dCQ">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="WhenDoYouSleep" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                <viewController id="Hpm-zm-vbe" customClass="SecondViewController" customModule="WhenDoYouSleep" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="d7p-cT-8iR">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9tq-sN-Peq">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                                <color key="backgroundColor" systemColor="labelColor"/>
-                            </view>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.0" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="RX1-Q8-gGx">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gxs-Yn-5KJ">
-                                <rect key="frame" x="354" y="59" width="45" height="45"/>
-                                <color key="backgroundColor" systemColor="secondaryLabelColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="45" id="L4e-Jl-gHd"/>
-                                    <constraint firstAttribute="height" constant="45" id="VcL-Tx-ZAr"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <color key="tintColor" systemColor="systemYellowColor"/>
-                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal" image="moon" catalog="system"/>
-                                <state key="selected" image="moon.fill" catalog="system"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="이때 일어나야 한다면?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qkw-LA-30U">
+                                <rect key="frame" x="15" y="64" width="306.5" height="42"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="35"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FfB-F7-bmK">
+                                <rect key="frame" x="15" y="111" width="384" height="150"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="conerRadius">
-                                        <real key="value" value="15"/>
+                                        <real key="value" value="20"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                            </view>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="10" style="wheels" translatesAutoresizingMaskIntoConstraints="NO" id="dZf-tq-bKx">
+                                <rect key="frame" x="15" y="111" width="384" height="152.5"/>
+                            </datePicker>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="추천 수면 시간" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KAw-0N-ifk">
+                                <rect key="frame" x="15" y="333.5" width="113" height="24"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="OIS-mq-tF6">
+                                <rect key="frame" x="15" y="362.5" width="384" height="450.5"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="ymR-YM-j9V">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="QPx-SG-U5N">
+                                        <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="eJU-95-vJI">
+                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </collectionViewCellContentView>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="Hpm-zm-vbe" id="hoM-qz-fis"/>
+                                    <outlet property="delegate" destination="Hpm-zm-vbe" id="ycb-Ma-XJ9"/>
+                                </connections>
+                            </collectionView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SKs-XO-hCc">
+                                <rect key="frame" x="183" y="278.5" width="48.5" height="31"/>
+                                <color key="backgroundColor" red="0.49803921569999998" green="0.47450980390000003" blue="0.47450980390000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="확인">
+                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="baseBackgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="buttonPushed:" destination="Hpm-zm-vbe" eventType="touchUpInside" id="di7-Ut-sFP"/>
+                                </connections>
                             </button>
                         </subviews>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="JoF-6S-snb"/>
+                        <color key="backgroundColor" systemColor="labelColor"/>
                         <constraints>
-                            <constraint firstItem="RX1-Q8-gGx" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="3eg-hE-N9b"/>
-                            <constraint firstItem="RX1-Q8-gGx" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="85x-UC-pq5"/>
-                            <constraint firstItem="RX1-Q8-gGx" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="AV7-LJ-YIq"/>
-                            <constraint firstAttribute="bottom" secondItem="9tq-sN-Peq" secondAttribute="bottom" id="C69-NB-hf1"/>
-                            <constraint firstItem="9tq-sN-Peq" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Gyk-rB-dsn"/>
-                            <constraint firstItem="Gxs-Yn-5KJ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="15" id="ZNd-Fb-e4i"/>
-                            <constraint firstItem="9tq-sN-Peq" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="gut-i2-mVC"/>
-                            <constraint firstAttribute="bottom" secondItem="RX1-Q8-gGx" secondAttribute="bottom" id="k4k-1x-zVU"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Gxs-Yn-5KJ" secondAttribute="trailing" constant="15" id="tFr-fW-8iq"/>
-                            <constraint firstItem="9tq-sN-Peq" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="wYe-nA-tn3"/>
+                            <constraint firstItem="JoF-6S-snb" firstAttribute="trailing" secondItem="FfB-F7-bmK" secondAttribute="trailing" constant="15" id="7Tf-ZA-LoQ"/>
+                            <constraint firstItem="SKs-XO-hCc" firstAttribute="top" secondItem="dZf-tq-bKx" secondAttribute="bottom" constant="15" id="8d0-7g-6IW"/>
+                            <constraint firstItem="Qkw-LA-30U" firstAttribute="top" secondItem="JoF-6S-snb" secondAttribute="top" constant="20" id="9nB-KV-goN"/>
+                            <constraint firstItem="FfB-F7-bmK" firstAttribute="top" secondItem="Qkw-LA-30U" secondAttribute="bottom" constant="5" id="AqK-xs-2ol"/>
+                            <constraint firstItem="SKs-XO-hCc" firstAttribute="centerX" secondItem="d7p-cT-8iR" secondAttribute="centerX" id="Di8-cU-Uhw"/>
+                            <constraint firstItem="dZf-tq-bKx" firstAttribute="height" secondItem="d7p-cT-8iR" secondAttribute="height" multiplier="0.17" id="HMU-KU-dRs"/>
+                            <constraint firstItem="FfB-F7-bmK" firstAttribute="leading" secondItem="JoF-6S-snb" secondAttribute="leading" constant="15" id="LTh-jC-Ewq"/>
+                            <constraint firstItem="dZf-tq-bKx" firstAttribute="leading" secondItem="JoF-6S-snb" secondAttribute="leading" constant="15" id="OeF-TN-LG2"/>
+                            <constraint firstItem="OIS-mq-tF6" firstAttribute="top" secondItem="KAw-0N-ifk" secondAttribute="bottom" constant="5" id="RQr-6S-XUe"/>
+                            <constraint firstItem="Qkw-LA-30U" firstAttribute="leading" secondItem="JoF-6S-snb" secondAttribute="leading" constant="15" id="XIg-vn-YIM"/>
+                            <constraint firstItem="KAw-0N-ifk" firstAttribute="leading" secondItem="JoF-6S-snb" secondAttribute="leading" constant="15" id="aO3-rP-voH"/>
+                            <constraint firstAttribute="trailing" secondItem="dZf-tq-bKx" secondAttribute="trailing" constant="15" id="d2h-R2-3BP"/>
+                            <constraint firstItem="dZf-tq-bKx" firstAttribute="top" secondItem="Qkw-LA-30U" secondAttribute="bottom" constant="5" id="gNP-do-94j"/>
+                            <constraint firstItem="JoF-6S-snb" firstAttribute="bottom" secondItem="OIS-mq-tF6" secondAttribute="bottom" id="mvc-aD-zHl"/>
+                            <constraint firstItem="FfB-F7-bmK" firstAttribute="height" secondItem="d7p-cT-8iR" secondAttribute="height" multiplier="0.167411" id="oNy-34-VQI"/>
+                            <constraint firstItem="KAw-0N-ifk" firstAttribute="top" secondItem="dZf-tq-bKx" secondAttribute="bottom" constant="70" id="p1a-Fk-rz2"/>
+                            <constraint firstItem="OIS-mq-tF6" firstAttribute="leading" secondItem="JoF-6S-snb" secondAttribute="leading" constant="15" id="t31-2O-O1r"/>
+                            <constraint firstItem="JoF-6S-snb" firstAttribute="trailing" secondItem="OIS-mq-tF6" secondAttribute="trailing" constant="15" id="zfO-Pq-Yd4"/>
                         </constraints>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Wake Time" image="sunrise" catalog="system" id="oI8-nP-37v"/>
                     <connections>
-                        <outlet property="backgroundImageView" destination="RX1-Q8-gGx" id="VAJ-s2-2xj"/>
-                        <outlet property="nightShiftButton" destination="Gxs-Yn-5KJ" id="a02-HM-Uuv"/>
+                        <outlet property="pickerViewView" destination="FfB-F7-bmK" id="VkR-Wj-jVV"/>
+                        <outlet property="timeCollectionView" destination="OIS-mq-tF6" id="JUd-GU-roz"/>
+                        <outlet property="timePicker" destination="dZf-tq-bKx" id="ZPR-cx-qpU"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hqQ-qA-ZkP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="128.98550724637681" y="39.508928571428569"/>
+            <point key="canvasLocation" x="86.956521739130437" y="492.85714285714283"/>
+        </scene>
+        <!--From Now-->
+        <scene sceneID="MYH-9k-o36">
+            <objects>
+                <viewController id="U16-NO-63b" customClass="FirstViewController" customModule="WhenDoYouSleep" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="6nO-8S-eEX">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="지금부터 잔다면?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rR5-kw-BaT">
+                                <rect key="frame" x="20" y="64" width="238.5" height="42"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="35"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="현재시간" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wG2-wr-5K5">
+                                <rect key="frame" x="20" y="121" width="70" height="24"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="AM 00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B12-N7-fdT">
+                                <rect key="frame" x="20" y="145" width="210.5" height="54"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="45"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="d2F-ou-WvH">
+                                <rect key="frame" x="15" y="253" width="384" height="560"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="t40-3C-9LO">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                                <connections>
+                                    <outlet property="dataSource" destination="U16-NO-63b" id="2kE-5y-co1"/>
+                                    <outlet property="delegate" destination="U16-NO-63b" id="n0g-ZH-tj6"/>
+                                </connections>
+                            </collectionView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="기상 예정 시간" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pm3-cD-Pvp">
+                                <rect key="frame" x="20" y="214" width="113" height="24"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="BJW-0i-Cmb"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="rR5-kw-BaT" firstAttribute="top" secondItem="BJW-0i-Cmb" secondAttribute="top" constant="20" id="0TG-qY-nbm"/>
+                            <constraint firstItem="B12-N7-fdT" firstAttribute="leading" secondItem="wG2-wr-5K5" secondAttribute="leading" id="4Ig-KT-Vm6"/>
+                            <constraint firstItem="d2F-ou-WvH" firstAttribute="top" secondItem="Pm3-cD-Pvp" secondAttribute="bottom" constant="15" id="E17-X2-mv9"/>
+                            <constraint firstItem="wG2-wr-5K5" firstAttribute="leading" secondItem="rR5-kw-BaT" secondAttribute="leading" id="FUa-KW-2cj"/>
+                            <constraint firstItem="BJW-0i-Cmb" firstAttribute="bottom" secondItem="d2F-ou-WvH" secondAttribute="bottom" id="LgE-Ol-fgO"/>
+                            <constraint firstItem="Pm3-cD-Pvp" firstAttribute="leading" secondItem="B12-N7-fdT" secondAttribute="leading" id="TQe-ep-VWB"/>
+                            <constraint firstItem="rR5-kw-BaT" firstAttribute="leading" secondItem="BJW-0i-Cmb" secondAttribute="leading" constant="20" id="UeX-Bl-YoY"/>
+                            <constraint firstItem="Pm3-cD-Pvp" firstAttribute="top" secondItem="B12-N7-fdT" secondAttribute="bottom" constant="15" id="WyK-Uk-AHH"/>
+                            <constraint firstItem="wG2-wr-5K5" firstAttribute="top" secondItem="rR5-kw-BaT" secondAttribute="bottom" constant="15" id="rvW-W9-gnk"/>
+                            <constraint firstItem="BJW-0i-Cmb" firstAttribute="trailing" secondItem="d2F-ou-WvH" secondAttribute="trailing" constant="15" id="soX-Mm-yFR"/>
+                            <constraint firstItem="d2F-ou-WvH" firstAttribute="leading" secondItem="BJW-0i-Cmb" secondAttribute="leading" constant="15" id="tRu-4h-x4O"/>
+                            <constraint firstItem="B12-N7-fdT" firstAttribute="top" secondItem="wG2-wr-5K5" secondAttribute="bottom" id="y3t-2v-BXW"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="From Now" image="clock.arrow.2.circlepath" catalog="system" id="9bW-id-cPa"/>
+                    <connections>
+                        <outlet property="currentTimeLabel" destination="B12-N7-fdT" id="R9D-8F-Xt1"/>
+                        <outlet property="currentTimeTitleLabel" destination="wG2-wr-5K5" id="4Og-LW-3FT"/>
+                        <outlet property="timeCollectionView" destination="d2F-ou-WvH" id="bjV-1x-o8F"/>
+                        <outlet property="wakeUpTimeLabel" destination="Pm3-cD-Pvp" id="Eht-KK-dCV"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bcR-SO-uSY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-696" y="493"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="MVn-tE-86q">
+            <objects>
+                <tabBarController id="VM8-aJ-xpf" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="lCE-Kz-9LV">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="selectedImageTintColor" systemColor="systemBackgroundColor"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="U16-NO-63b" kind="relationship" relationship="viewControllers" id="y0L-lC-ogr"/>
+                        <segue destination="Hpm-zm-vbe" kind="relationship" relationship="viewControllers" id="Xd3-qV-Ban"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nB3-g4-jiq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="89" y="-235"/>
         </scene>
     </scenes>
     <resources>
-        <image name="background" width="718" height="1280"/>
-        <image name="moon" catalog="system" width="128" height="121"/>
-        <image name="moon.fill" catalog="system" width="128" height="121"/>
+        <image name="clock.arrow.2.circlepath" catalog="system" width="128" height="103"/>
+        <image name="sunrise" catalog="system" width="128" height="97"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
-        <systemColor name="secondaryLabelColor">
-            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemYellowColor">
-            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
     </resources>
 </document>

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="firstTimeCollectionViewCell" reuseIdentifier="firstTimeCollectionViewCell" id="gTV-IL-0wX" customClass="firstTimeCollectionViewCell" customModule="WhenDoYouSleep" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="306" height="163"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="306" height="163"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="J9f-SS-fJd">
+                        <rect key="frame" x="0.0" y="0.0" width="306" height="163"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0시간 00분" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bMG-8H-oB8">
+                                <rect key="frame" x="15" y="72.5" width="72" height="18"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="AM 00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sj3-we-xEf">
+                                <rect key="frame" x="106" y="60.5" width="165" height="42"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="35"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemMintColor"/>
+                        <color key="tintColor" systemColor="labelColor"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="sj3-we-xEf" secondAttribute="trailing" constant="35" id="DeE-Jp-Vet"/>
+                            <constraint firstItem="bMG-8H-oB8" firstAttribute="centerY" secondItem="J9f-SS-fJd" secondAttribute="centerY" id="SIp-YL-l8W"/>
+                            <constraint firstItem="bMG-8H-oB8" firstAttribute="leading" secondItem="J9f-SS-fJd" secondAttribute="leading" constant="15" id="Thv-gH-LKC"/>
+                            <constraint firstItem="sj3-we-xEf" firstAttribute="centerY" secondItem="bMG-8H-oB8" secondAttribute="centerY" id="hbt-Ho-WAN"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="conerRadius">
+                                <real key="value" value="20"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="J9f-SS-fJd" secondAttribute="trailing" id="0OU-EQ-UKk"/>
+                <constraint firstItem="J9f-SS-fJd" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="F7p-RH-V0j"/>
+                <constraint firstItem="J9f-SS-fJd" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="FqE-Lk-JbB"/>
+                <constraint firstAttribute="bottom" secondItem="J9f-SS-fJd" secondAttribute="bottom" id="Qod-J5-kW5"/>
+            </constraints>
+            <size key="customSize" width="306" height="163"/>
+            <connections>
+                <outlet property="timeIntervalLabel" destination="bMG-8H-oB8" id="y4b-b5-z2m"/>
+                <outlet property="timeLabel" destination="sj3-we-xEf" id="cu8-jH-tGl"/>
+                <outlet property="view" destination="J9f-SS-fJd" id="nti-3l-htl"/>
+            </connections>
+            <point key="canvasLocation" x="233.33333333333334" y="69.977678571428569"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemMintColor">
+            <color red="0.0" green="0.7803921568627451" blue="0.74509803921568629" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
