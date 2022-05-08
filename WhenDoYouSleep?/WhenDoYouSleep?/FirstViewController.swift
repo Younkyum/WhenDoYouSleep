@@ -8,8 +8,8 @@
 import UIKit
 
 class FirstViewController: UIViewController {
-    var timeIntervalName = ["1시간 30분", "3시간", "4시간 30분", "6시간", "7시간 30분"]
-    var timeInterval = [5400, 10800, 16200, 21600, 27000]
+    var timeIntervalName = ["1시간 30분", "3시간", "4시간 30분", "6시간", "7시간 30분", "9시간", "10시간 30분"]
+    var timeInterval = [5400, 10800, 16200, 21600, 27000, 32400, 37800]
     
     // MARK: - Theme
     // 0 = background / 1 = cell / 2 = label
@@ -17,7 +17,7 @@ class FirstViewController: UIViewController {
                   [UIColor(rgb: 0x748c70), UIColor(rgb: 0x455d3e), UIColor(rgb: 0xe8e7e3)],
                   [UIColor(rgb: 0xbb937e), UIColor(rgb: 0x915549), UIColor(rgb: 0xececee)]]
     //rgb(67, 79, 120)
-    var theme = 1
+    var theme = 0
     
     
     @IBOutlet weak var wakeUpTimeLabel: UILabel!
@@ -64,7 +64,7 @@ class FirstViewController: UIViewController {
 
 extension FirstViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+        return timeInterval.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {

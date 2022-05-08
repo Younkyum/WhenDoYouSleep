@@ -9,8 +9,8 @@ import UIKit
 
 class SecondViewController: UIViewController {
     
-    var timeIntervalName = ["7시간 30분", "6시간", "4시간 30분", "3시간", "1시간 30분"]
-    var timeInterval = [-27000, -21600, -16200, -10800, -5400]
+    var timeIntervalName = ["10시간 30분", "9시간", "7시간 30분", "6시간", "4시간 30분", "3시간", "1시간 30분"]
+    var timeInterval = [-37800, -32400, -27000, -21600, -16200, -10800, -5400]
     
     @IBOutlet weak var pickerViewView: UIView!
     
@@ -20,7 +20,7 @@ class SecondViewController: UIViewController {
                   [UIColor(rgb: 0x748c70), UIColor(rgb: 0x455d3e), UIColor(rgb: 0xe8e7e3)],
                   [UIColor(rgb: 0xbb937e), UIColor(rgb: 0x915549), UIColor(rgb: 0xececee)]]
     //rgb(67, 79, 120)
-    var theme = 1
+    var theme = 0
     
     @IBOutlet weak var timePicker: UIDatePicker!
     @IBOutlet weak var timeCollectionView: UICollectionView!
@@ -64,7 +64,7 @@ class SecondViewController: UIViewController {
 
 extension SecondViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+        return timeInterval.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
