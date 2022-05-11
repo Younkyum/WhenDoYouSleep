@@ -12,18 +12,19 @@ class FirstViewController: UIViewController {
     var timeInterval = [5400, 10800, 16200, 21600, 27000, 32400, 37800]
     
     // MARK: - Theme
-    // 0 = background / 1 = cell / 2 = label
-    var themes = [[UIColor(rgb: 0x334557), UIColor(rgb: 0x588195), UIColor(rgb: 0xeff0f2)],
-                  [UIColor(rgb: 0x748c70), UIColor(rgb: 0x455d3e), UIColor(rgb: 0xe8e7e3)],
-                  [UIColor(rgb: 0xbb937e), UIColor(rgb: 0x915549), UIColor(rgb: 0xececee)]]
-    //rgb(67, 79, 120)
-    var theme = 0
+    var theme = UserDefaults.standard.integer(forKey: themeKey)
     
     
     @IBOutlet weak var wakeUpTimeLabel: UILabel!
     @IBOutlet weak var currentTimeTitleLabel: UILabel!
     @IBOutlet weak var currentTimeLabel: UILabel!
     @IBOutlet weak var timeCollectionView: UICollectionView!
+    
+    override func viewWillAppear(_ animated: Bool) {
+        theme = UserDefaults.standard.integer(forKey: themeKey)
+        allStyle()
+        timeCollectionView.reloadData()
+    }
     
     override func viewDidLoad() {
         
@@ -38,6 +39,10 @@ class FirstViewController: UIViewController {
         setupFlowLayout()
         
         
+        allStyle()
+    }
+    
+    func allStyle() {
         self.view.backgroundColor = themes[theme][0]
         self.timeCollectionView.backgroundColor = themes[theme][0]
     }
@@ -73,6 +78,9 @@ extension FirstViewController: UICollectionViewDelegate, UICollectionViewDataSou
         cell.timeIntervalLabel.text = timeIntervalName[indexPath.row]
         cell.timeIntervalLabel.textColor = themes[theme][2]
         cell.view.backgroundColor = themes[theme][1]
+       
+        
+        
         let dateformatter = DateFormatter()
         dateformatter.dateFormat = "aa hh:mm"
         cell.timeLabel.text = dateformatter.string(from: Date(timeIntervalSinceNow: TimeInterval(timeInterval[indexPath.row])))

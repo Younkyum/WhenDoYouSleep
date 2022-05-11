@@ -19,6 +19,9 @@
 		41E099F128143EB50005B08F /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E099F028143EB50005B08F /* SecondViewController.swift */; };
 		41E099F7281456D90005B08F /* secondTimeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E099F5281456D90005B08F /* secondTimeCollectionViewCell.swift */; };
 		41E099F8281456D90005B08F /* secondTimeCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 41E099F6281456D90005B08F /* secondTimeCollectionViewCell.xib */; };
+		41F1B910282A6EFF0048CD7B /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41F1B90F282A6EFF0048CD7B /* SettingViewController.swift */; };
+		41F1B918282A71930048CD7B /* settingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41F1B916282A71930048CD7B /* settingTableViewCell.swift */; };
+		41F1B919282A71930048CD7B /* settingTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 41F1B917282A71930048CD7B /* settingTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +39,9 @@
 		41E099F028143EB50005B08F /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		41E099F5281456D90005B08F /* secondTimeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = secondTimeCollectionViewCell.swift; sourceTree = "<group>"; };
 		41E099F6281456D90005B08F /* secondTimeCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = secondTimeCollectionViewCell.xib; sourceTree = "<group>"; };
+		41F1B90F282A6EFF0048CD7B /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
+		41F1B916282A71930048CD7B /* settingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = settingTableViewCell.swift; sourceTree = "<group>"; };
+		41F1B917282A71930048CD7B /* settingTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = settingTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +74,7 @@
 		41ACA2732806821300EF74B9 /* WhenDoYouSleep? */ = {
 			isa = PBXGroup;
 			children = (
+				41F1B911282A71440048CD7B /* settingCell */,
 				41E099F2281456890005B08F /* secondTimeViewCell */,
 				41E099E92813D2D20005B08F /* firstTimeViewCell */,
 				41ACA2742806821300EF74B9 /* AppDelegate.swift */,
@@ -79,6 +86,7 @@
 				41E099E52813D06E0005B08F /* FirstViewController.swift */,
 				41E099F028143EB50005B08F /* SecondViewController.swift */,
 				41E099E72813D1060005B08F /* UIView-extenstion.swift */,
+				41F1B90F282A6EFF0048CD7B /* SettingViewController.swift */,
 			);
 			path = "WhenDoYouSleep?";
 			sourceTree = "<group>";
@@ -99,6 +107,15 @@
 				41E099F6281456D90005B08F /* secondTimeCollectionViewCell.xib */,
 			);
 			path = secondTimeViewCell;
+			sourceTree = "<group>";
+		};
+		41F1B911282A71440048CD7B /* settingCell */ = {
+			isa = PBXGroup;
+			children = (
+				41F1B916282A71930048CD7B /* settingTableViewCell.swift */,
+				41F1B917282A71930048CD7B /* settingTableViewCell.xib */,
+			);
+			path = settingCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -163,6 +180,7 @@
 				41ACA27E2806821300EF74B9 /* Assets.xcassets in Resources */,
 				41E099F8281456D90005B08F /* secondTimeCollectionViewCell.xib in Resources */,
 				41E099ED2813D2F60005B08F /* firstTimeCollectionViewCell.xib in Resources */,
+				41F1B919282A71930048CD7B /* settingTableViewCell.xib in Resources */,
 				41ACA27C2806821300EF74B9 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -177,7 +195,9 @@
 				41E099F128143EB50005B08F /* SecondViewController.swift in Sources */,
 				41E099F7281456D90005B08F /* secondTimeCollectionViewCell.swift in Sources */,
 				41E099E62813D06E0005B08F /* FirstViewController.swift in Sources */,
+				41F1B910282A6EFF0048CD7B /* SettingViewController.swift in Sources */,
 				41E099EC2813D2F60005B08F /* firstTimeCollectionViewCell.swift in Sources */,
+				41F1B918282A71930048CD7B /* settingTableViewCell.swift in Sources */,
 				41E099E82813D1060005B08F /* UIView-extenstion.swift in Sources */,
 				41ACA2752806821300EF74B9 /* AppDelegate.swift in Sources */,
 				41ACA2772806821300EF74B9 /* SceneDelegate.swift in Sources */,
@@ -340,7 +360,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.1;
+				MARKETING_VERSION = 2.2;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.YourCompany.WhenDoYouSleep-";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -369,7 +389,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.1;
+				MARKETING_VERSION = 2.2;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.YourCompany.WhenDoYouSleep-";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;

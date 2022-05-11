@@ -15,16 +15,17 @@ class SecondViewController: UIViewController {
     @IBOutlet weak var pickerViewView: UIView!
     
     // MARK: - Theme
-    // 0 = background / 1 = cell / 2 = label
-    var themes = [[UIColor(rgb: 0x334557), UIColor(rgb: 0x588195), UIColor(rgb: 0xeff0f2)],
-                  [UIColor(rgb: 0x748c70), UIColor(rgb: 0x455d3e), UIColor(rgb: 0xe8e7e3)],
-                  [UIColor(rgb: 0xbb937e), UIColor(rgb: 0x915549), UIColor(rgb: 0xececee)]]
-    //rgb(67, 79, 120)
-    var theme = 0
+
+    var theme = UserDefaults.standard.integer(forKey: themeKey)
     
     @IBOutlet weak var timePicker: UIDatePicker!
     @IBOutlet weak var timeCollectionView: UICollectionView!
     
+    override func viewWillAppear(_ animated: Bool) {
+        theme = UserDefaults.standard.integer(forKey: themeKey)
+        timeCollectionView.reloadData()
+        allStyle()
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,15 +34,23 @@ class SecondViewController: UIViewController {
             overrideUserInterfaceStyle = .light
         }
         
-        self.pickerViewView.backgroundColor = themes[theme][1]
-        self.timeCollectionView.tintColor = themes[theme][2]
-        self.view.backgroundColor = themes[theme][0]
-        self.timeCollectionView.backgroundColor = themes[theme][0]
+        allStyle()
+//        self.pickerViewView.backgroundColor = themes[theme][1]
+//        self.timeCollectionView.tintColor = themes[theme][2]
+//        self.view.backgroundColor = themes[theme][0]
+//        self.timeCollectionView.backgroundColor = themes[theme][0]
         timePicker.setValue(UIColor.white, forKey: "textColor")
         
         self.timeCollectionView.register(UINib(nibName: "secondTimeCollectionViewCell", bundle: .main),
                                          forCellWithReuseIdentifier: "secondTimeCollectionViewCell")
         setupFlowLayout()
+    }
+    
+    func allStyle() {
+        self.pickerViewView.backgroundColor = themes[theme][1]
+        self.timeCollectionView.tintColor = themes[theme][2]
+        self.view.backgroundColor = themes[theme][0]
+        self.timeCollectionView.backgroundColor = themes[theme][0]
     }
     
     @IBAction func buttonPushed(_ sender: Any) {
