@@ -11,17 +11,12 @@ class SettingViewController: UIViewController {
 
     @IBOutlet weak var themeTableView: UITableView!
     
-   
-    var themeNames = ["Night Ocean", "Dark Green", "Warm Spring", "Black Night", "Jasmin"]
-    
     var theme = UserDefaults.standard.integer(forKey: themeKey)
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if #available(iOS 13.0, *) {
-            overrideUserInterfaceStyle = .light
-        }
+        
         
         view.backgroundColor = themes[theme][0]
         themeTableViewStyle()

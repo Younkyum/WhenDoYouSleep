@@ -30,9 +30,7 @@ class FirstViewController: UIViewController {
         
         super.viewDidLoad()
         
-        if #available(iOS 13.0, *) {
-            overrideUserInterfaceStyle = .light
-        }
+        
         
         self.timeCollectionView.register(UINib(nibName: "firstTimeCollectionViewCell", bundle: .main), forCellWithReuseIdentifier: "firstTimeCollectionViewCell")
         currentTimeLabelChange()

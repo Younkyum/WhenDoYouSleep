@@ -30,10 +30,6 @@ class SecondViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if #available(iOS 13.0, *) {
-            overrideUserInterfaceStyle = .light
-        }
-        
         allStyle()
 //        self.pickerViewView.backgroundColor = themes[theme][1]
 //        self.timeCollectionView.tintColor = themes[theme][2]

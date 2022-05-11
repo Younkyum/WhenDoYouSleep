@@ -12,6 +12,7 @@
 		41ACA27C2806821300EF74B9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 41ACA27A2806821300EF74B9 /* Main.storyboard */; };
 		41ACA27E2806821300EF74B9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 41ACA27D2806821300EF74B9 /* Assets.xcassets */; };
 		41ACA2812806821300EF74B9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 41ACA27F2806821300EF74B9 /* LaunchScreen.storyboard */; };
+		41C5D447282B4E55008D5748 /* Themes-extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41C5D446282B4E55008D5748 /* Themes-extensions.swift */; };
 		41E099E62813D06E0005B08F /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E099E52813D06E0005B08F /* FirstViewController.swift */; };
 		41E099E82813D1060005B08F /* UIView-extenstion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E099E72813D1060005B08F /* UIView-extenstion.swift */; };
 		41E099EC2813D2F60005B08F /* firstTimeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E099EA2813D2F60005B08F /* firstTimeCollectionViewCell.swift */; };
@@ -32,6 +33,7 @@
 		41ACA27D2806821300EF74B9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		41ACA2802806821300EF74B9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		41ACA2822806821300EF74B9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		41C5D446282B4E55008D5748 /* Themes-extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Themes-extensions.swift"; sourceTree = "<group>"; };
 		41E099E52813D06E0005B08F /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
 		41E099E72813D1060005B08F /* UIView-extenstion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView-extenstion.swift"; sourceTree = "<group>"; };
 		41E099EA2813D2F60005B08F /* firstTimeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = firstTimeCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -87,6 +89,7 @@
 				41E099F028143EB50005B08F /* SecondViewController.swift */,
 				41E099E72813D1060005B08F /* UIView-extenstion.swift */,
 				41F1B90F282A6EFF0048CD7B /* SettingViewController.swift */,
+				41C5D446282B4E55008D5748 /* Themes-extensions.swift */,
 			);
 			path = "WhenDoYouSleep?";
 			sourceTree = "<group>";
@@ -201,6 +204,7 @@
 				41E099E82813D1060005B08F /* UIView-extenstion.swift in Sources */,
 				41ACA2752806821300EF74B9 /* AppDelegate.swift in Sources */,
 				41ACA2772806821300EF74B9 /* SceneDelegate.swift in Sources */,
+				41C5D447282B4E55008D5748 /* Themes-extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

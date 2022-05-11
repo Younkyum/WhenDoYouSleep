@@ -9,11 +9,7 @@ import UIKit
 
 let themeKey = "themeKey"
 let initialKey = "initialKey"
-let themes = [[UIColor(rgb: 0x334557), UIColor(rgb: 0x588195), UIColor(rgb: 0xeff0f2)],
-              [UIColor(rgb: 0x748c70), UIColor(rgb: 0x455d3e), UIColor(rgb: 0xe8e7e3)],
-              [UIColor(rgb: 0xbb937e), UIColor(rgb: 0x915549), UIColor(rgb: 0xececee)],
-              [UIColor(rgb: 0x000000), UIColor(rgb: 0x505050), UIColor(rgb: 0xdcdcdc)],
-              [UIColor(rgb: 0x6c5a72), UIColor(rgb: 0x9986b3), UIColor(rgb: 0xe0dbef)]]
+
 
 
 @main
@@ -30,6 +26,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             UserDefaults.standard.register(defaults: defaultSettings)
             UserDefaults.standard.set(true, forKey: initialKey)
         }
+        
         
         
         return true
